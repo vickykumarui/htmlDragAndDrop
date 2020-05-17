@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+   <form id="dropFileForm" action="" method="post" onsubmit="uploadFiles(event)">
+       <input type="file" name="files[]" id="fileInput" multiple onchange="addFiles(event)">
+       <label for="fileInput" id="fileLabel"
+       ondragover="overrideDefault(event);fileHover()"
+       ondragenter="overrideDefault(event);fileHover()"
+       ondragleave="overrideDefault(event); fileHoverEnd()"
+       ondrop="overrideDefault(event);fileHoverEnd(); addFiles(event)">
+         <span id="filelabeltext">
+            Choose a file or drag it here
+         </span> 
+         <span id="uploading">
+             
+         </span>
+       </label>
+
+       <input type="submit" value="Upload" class="uploadButton">
+   </form>
+
+    <script src="./main.js"></script>
+</body>
+</html>
